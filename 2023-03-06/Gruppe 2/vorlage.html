@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body id="top">
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#top">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#carousel">Carousel</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#table">Table</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#card">Card</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<main class="container">
+<h1>Hello, world!</h1>
+  <article class="py-5" id="carousel">
+    <h2 class="mt-5">Ich bin ein Carousel</h2>
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active ratio ratio-16x9">
+          <img src="https://unsplash.it/600/400" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item ratio ratio-16x9">
+          <img src="https://unsplash.it/600/400" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item ratio ratio-16x9">
+          <img src="https://unsplash.it/600/400" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </article>
+  <article class="py-5" id="table">
+    <h2 class="mt-5">Ich bin eine Tabelle</h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">6</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr>
+      </tbody>
+    </table>
+  </article>
+  <article class="py-5" id="card">
+    <h2 class="mt-5">Ich bin Cards</h2>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <section class="col">
+        <div class="card">
+          <div class="ratio ratio-4x3">
+            <img src="https://unsplash.it/600/400" class="card-img-top ratio" alt="...">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Card title</h3>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </section>
+      <section class="col selectedParent">
+        <div class="card">
+          <div class="ratio ratio-4x3">
+            <img src="https://unsplash.it/600/400" class="card-img-top ratio" alt="...">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Card title</h3>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </section>
+      <section class="col">
+        <div class="card">
+          <div class="ratio ratio-4x3">
+          <img src="https://unsplash.it/600/400" class="card-img-top ratio" alt="...">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Card title</h3>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+          </div>
+        </div>
+      </section>
+      <section class="col">
+        <div class="card">
+          <div class="ratio ratio-4x3">
+            <img src="https://unsplash.it/600/400" class="card-img-top ratio" alt="...">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Card title</h3>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </article>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+  // ToDo
+  // 1. Füge dem zweiten Card Title die Klasse 'text-danger' hinzu
+
+
+
+
+  // 2. Selektiere von der  2. Card den parent und gib das Element in der console aus
+
+
+
+
+
+  // 3. Erstelle ein Script das jede dritte td selektiert und gib sie in der console aus
+
+
+
+
+
+  /* 4. Verändere von jeder ersten td mit JS den Hintergrund (backgroundColor) */
+
+
+
+
+
+  /* 5. Gib in der Console aus wie viele Links in der Navigation sind.
+   Selektiere dazu alle Elemente mit JS und gib die Länge in der console aus */
+
+
+
+
+
+
+  /* 6. Deklariere eine Funktion in der du den Befehl prompt('Gib deinen Namen ein') aufrufst und den Wert in eine
+     Variable speicherst. Deklariere eine weitere Funktion mit einem Übergabeparameter.
+     In der ersten Funktion wird die zweite Funktion aufgerufen und der Wert aus Promt übergeben.
+     Die zweite Funktion soll in der console den Übergabeparameter ausgeben.
+     Die erste Funktion soll bei Seitenaufruf ausgeführt werden */
+
+
+
+
+
+
+  /* 7. Erstelle eine Liste von Zahlen. Diese Liste kann beliebig lang sein und positive ganze Zahlen enthalten. (Array)
+     Definiere eine Funktion namens square, die das Quadrat einer übergebenen Zahl berechnet. Diese Funktion soll eine
+     anonyme Funktion verwenden.
+     Verwende die forEach-Methode, um durch jedes Element in der Liste zu iterieren. Für jedes Element soll die
+     anonyme Funktion aufgerufen werden, um das Quadrat zu berechnen und auszugeben. */
+
+
+
+
+
+
+  /* 8. Verwende eine for-Schleife, um durch jedes Card-Element in der Liste zu iterieren (cards).
+    Füge jedem Card-Element die Klassen 'border' und 'border-primary' hinzu, um einen Rahmen um jedes Element hinzuzufügen. */
+
+
+
+
+
+  /* 9. Verwende eine while-Schleife, um durch jedes Tabellenzeilen-Element in der Liste zu iterieren (tableRows).
+     Gib den Textinhalt jeder Tabellenzeile in der Konsole aus. */
+
+
+
+
+
+  /* 10. Verwende eine verschachtelte for-Schleife, um durch jedes Element des mehrdimensionalen Arrays multiArray zu iterieren.
+     Überprüfe jedes Element auf Gleichheit mit dem Wert 5.
+     Wenn der Wert 5 gefunden wird, gib eine Nachricht in der Konsole aus und beende die innere Schleife mit break. */
+  const multiArray = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+  ];
+
+
+
+
+</script>
+</body>
+</html>
