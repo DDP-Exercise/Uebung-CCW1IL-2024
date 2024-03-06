@@ -113,6 +113,7 @@
       </tbody>
     </table>
   </article>
+
   <article class="py-5" id="card">
     <h2 class="mt-5">Ich bin Cards</h2>
     <div class="row row-cols-1 row-cols-md-2 g-4">
@@ -133,7 +134,7 @@
             <img src="https://unsplash.it/600/400" class="card-img-top ratio" alt="...">
           </div>
           <div class="card-body">
-            <h3 class="card-title">Card title</h3>
+            <h3 class="card-title" id="secondCardTitle">Card title</h3>
             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
           </div>
         </div>
@@ -141,7 +142,7 @@
       <section class="col">
         <div class="card">
           <div class="ratio ratio-4x3">
-          <img src="https://unsplash.it/600/400" class="card-img-top ratio" alt="...">
+            <img src="https://unsplash.it/600/400" class="card-img-top ratio" alt="...">
           </div>
           <div class="card-body">
             <h3 class="card-title">Card title</h3>
@@ -165,45 +166,72 @@
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script>
+  'use strict';
   // ToDo
   // 1. Füge dem zweiten Card Title die Klasse 'text-danger' hinzu
+  // Variante 1
+    /*let secondCard = document.getElementsByClassName('card-title')[1];
+    secondCard.className = 'text-danger';*/
+  // Variante 2
+    /*const cardTitle = document.getElementsByClassName('card-title');
+    cardTitle[1].classList.add('text-danger');*/
+  // Variante 3 // id hinzugefügt bei 2. Element
+    /*const cardTitle = document.getElementById('secondCardTitle');
+    cardTitle.className = 'text-danger';*/
+  // Variante 4
+    let cardTitle = document.querySelector('#card section:nth-child(2) .card-title')
+    if(cardTitle) cardTitle.classList.add('text-danger');
 
 
-
-
-  // 2. Selektiere von der  2. Card den parent und gib das Element in der console aus
-
-
-
-
+  // 2. Selektiere von der 2. Card den parent und gib das Element in der console aus
+  // Variante 1
+    const parentSelect = document.getElementsByClassName('card');
+    console.log(parentSelect[1].parentElement);
+  // Variante 2
+    console.log(document.getElementsByClassName('card')[1].parentNode);
+  // Variante 3
+    const parent = document.getElementsByClassName('col selectedParent');
+    console.log(parent);
+  // Variante 4
+    const secondCard = document.querySelector('#card section:nth-child(2) .card');
+    console.log(secondCard.parentNode);
 
   // 3. Erstelle ein Script das jede dritte td selektiert und gib sie in der console aus
-
-
-
-
+  // Variante 1
+    const thirdTableData = document.querySelectorAll('td:nth-child(3)');
+    thirdTableData.forEach(function (element) {
+      console.log(element.textContent);
+    })
+  // Variante 2
+    const selected_third = document.querySelectorAll('td:nth-child(3)');
+    selected_third.forEach((td) => {
+      console.log(td.textContent)
+    })
 
   /* 4. Verändere von jeder ersten td mit JS den Hintergrund (backgroundColor) */
-
-
-
+  // Variante 1
+    const select_first = document.querySelectorAll('td:first-of-type');
+    select_first.forEach((td) => {
+      td.style.backgroundColor = 'red';
+    })
+  // Variante 2 // nur ein Element -> ToDo research warum geht nicht
+    document.querySelector('td:first-child').style.backgroundColor = 'yellow'
 
 
   /* 5. Gib in der Console aus wie viele Links in der Navigation sind.
    Selektiere dazu alle Elemente mit JS und gib die Länge in der console aus */
-
-
-
-
+  // Variante 1
+    const numberLink = document.getElementsByTagName('a');
+    console.log(numberLink.length)
 
 
   /* 6. Deklariere eine Funktion in der du den Befehl prompt('Gib deinen Namen ein') aufrufst und den Wert in eine
      Variable speicherst. Deklariere eine weitere Funktion mit einem Übergabeparameter.
-     In der ersten Funktion wird die zweite Funktion aufgerufen und der Wert aus Promt übergeben.
+     In der ersten Funktion wird die zweite Funktion aufgerufen und der Wert aus Prompt übergeben.
      Die zweite Funktion soll in der console den Übergabeparameter ausgeben.
      Die erste Funktion soll bei Seitenaufruf ausgeführt werden */
 
-
+    // Siehe Gruppe 1
 
 
 
@@ -214,9 +242,7 @@
      Verwende die forEach-Methode, um durch jedes Element in der Liste zu iterieren. Für jedes Element soll die
      anonyme Funktion aufgerufen werden, um das Quadrat zu berechnen und auszugeben. */
 
-
-
-
+  // Siehe Gruppe 1
 
 
   /* 8. Verwende eine for-Schleife, um durch jedes Card-Element in der Liste zu iterieren (cards).
