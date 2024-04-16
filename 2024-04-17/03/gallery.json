@@ -1,0 +1,20 @@
+[
+  {
+    "url": "https://images.unsplash.com/photo-1597237154674-1a0d2274cef4?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description": "Beautiful landscape",
+    "headline": "headline",
+    "text": "Example Text for image"
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1555008872-f03b347ffb53?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description": "Adorable kitten",
+    "headline": "headline",
+    "text": "Example Text for image"
+  },
+  {
+    "url": "https://images.unsplash.com/photo-1552944150-6dd1180e5999?q=80&w=2825&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description": "Magnificent sunset",
+    "headline": "headline",
+    "text": "Example Text for image"
+  }
+]
