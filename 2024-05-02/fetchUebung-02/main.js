@@ -22,17 +22,18 @@ const generateMovieHtml = movie => `
 // Funktion zum Anzeigen von Filmen auf der Seite
 function displayMovies(movies) {
     // Initialisiere eine leere Zeichenfolge für die HTML-Ausgabe
-
+    let movieHtml = '';
 
     // Iteriere durch jedes Element im Array "movies"
-
+    movies.forEach(movie => {
         // Füge das HTML für den aktuellen Film zur movieHtml-Zeichenfolge hinzu
-
-
+        movieHtml += generateMovieHtml(movie);
+    });
 
     // Setze den HTML-Inhalt des Elements mit der ID "movies" auf die generierte movieHtml-Zeichenfolge
-
+    document.getElementById('movies').innerHTML = movieHtml;
 }
+
 
 // Funktion zum Anzeigen der Seitennavigation
 function displayPagination(page, totalPages, searchTerm) {
@@ -46,11 +47,11 @@ function displayPagination(page, totalPages, searchTerm) {
 // Event-Listener für die Suchanfrage
 document.getElementById('search-form').addEventListener('submit', event => {
     // Verhindern Sie das Standardverhalten des Submit-Events
-
+    event.preventDefault();
     // Holen Sie den Suchbegriff aus dem Suchfeld
-
+    const searchTerm = document.getElementById('search').value;
     // Rufen Sie die Funktion auf, um die Filmliste abzurufen
-
+    getMovies(searchTerm, 1);
 });
 
 // Funktion zum Abrufen der Filmliste von der API
@@ -59,34 +60,28 @@ function getMovies(searchTerm, page) {
     const url = `https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchTerm}&page=${page}`;
 
     // Fetch-Anfrage, um die Filmdaten von der API abzurufen
-
-        //then Methode um response zu json formatieren
-
-        // Entpacken der Response-Daten, um die Liste von Filmen (falls vorhanden) und die Gesamtanzahl der Ergebnisse zu erhalten
-
-            // Berechnen der Gesamtzahl (totalPages) der Seiten und Aufruf von Funktionen zur Anzeige von Filmen und Seitennavigation (zB Math.ceil(totalResults / 10))
-
-            // Funktion zum Anzeigen von Filmen aufrufen mit Übergabeparameter mit den Filmen
-
-            // Funktion zum Anzeigen der Seitennavigation aufrufen mit der page, der gesamten Pageanzahl und dem Suchterm
-
-
-        // catch error
-
+    fetch(url)
+        .then(response => response.json())
+        .then(({Search: movies = [], totalResults = 0}) => {
+            // Berechnen der Gesamtzahl der Seiten und Aufruf von Funktionen zur Anzeige von Filmen und Seitennavigation
+            const totalPages = Math.ceil(totalResults / 10);
+            displayMovies(movies); // Funktion zum Anzeigen von Filmen aufrufen
+            displayPagination(page, totalPages, searchTerm); // Funktion zum Anzeigen der Seitennavigation aufrufen
+        })
+        .catch(error => console.error(error));
 }
-
 
 // Event-Listener für Details-Links
 document.getElementById('movies').addEventListener('click', event => {
     // Überprüfen, ob der Klick auf einen Details-Link war
-
+    if (event.target.matches('.details-link')) {
         // Verhindert das Standardverhalten des Links, um die Seite nicht neu zu laden
-
+        event.preventDefault();
         // Abrufen der imdbID aus dem data-imdb-id-Attribut des angeklickten Elements
-
+        const imdbID = event.target.getAttribute('data-imdb-id');
         // Aufrufen der Funktion getMovieDetails mit der erhaltenen imdbID als Parameter
-
-
+        getMovieDetails(imdbID);
+    }
 });
 
 function getMovieDetails(imdbID) {
