@@ -10,8 +10,26 @@ Es ist wichtig zu beachten, dass php://input ein sogenannter "Stream" in PHP ist
 */
 // Überprüfen, ob Daten vorhanden sind
 if (!empty($data)) {
+    // Daten in ein PHP-Array konvertieren
+    $contacts = json_decode($data, true);
 
+    if ($contacts !== null) {
+        // Pfad zur JSON-Datei
+        $file = 'contacts.json';
+
+        // Kontaktdaten in die JSON-Datei schreiben
+        file_put_contents($file, json_encode($contacts, JSON_PRETTY_PRINT));
+
+        // Erfolgsmeldung zurückgeben
+        echo "Kontakte erfolgreich gespeichert.";
+    } else {
+        // Fehlermeldung zurückgeben, wenn JSON ungültig ist
+        http_response_code(400);
+        echo "Ungültige JSON-Daten.";
+    }
 } else {
-
+    // Fehlermeldung zurückgeben, wenn keine Daten empfangen wurden
+    http_response_code(400);
+    echo "Keine Daten empfangen.";
 }
 ?>

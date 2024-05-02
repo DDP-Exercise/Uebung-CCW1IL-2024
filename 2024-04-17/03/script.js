@@ -2,22 +2,19 @@
 $(document).ready(function() {
     // AJAX-Anfrage zum Laden der Galerie aus der JSON-Datei
     $.ajax({
-         url: 'gallery.json', // Pfad zur JSON-Datei
-         dataType: 'json', // Datentyp der erwarteten Antwort
+        url: 'gallery.json', // Pfad zur JSON-Datei
+        dataType: 'json', // Datentyp der erwarteten Antwort
         success: function(data) { // Erfolgsfall: Die Daten wurden erfolgreich geladen
             // Iteriere über jedes Element (Bild) in der JSON-Datenstruktur
-            $.each(data, function (index, image) {
+            $.each(data, function(index, image) {
                 // Erstelle ein neues Bild-Objekt für jedes Bild in der Galerie
-                console.info(index, image)
                 let imgObj = new ImageObject(image.url, image.description, image.headline, image.text);
-                console.info(imgObj)
                 // Füge das Bild-Objekt ins HTML ein
                 $('#gallery').append(imgObj.toHTML());
-
-            })
+            });
         },
         error: function(xhr, status, error) { // Fehlerfall: Die Daten konnten nicht geladen werden
-             console.error('Error loading: ', status, error); // Gib eine Fehlermeldung in der Konsole aus
+            console.error('Error loading gallery:', status, error); // Gib eine Fehlermeldung in der Konsole aus
         }
     });
 });
@@ -25,10 +22,10 @@ $(document).ready(function() {
 // Definition einer Bild-Objektklasse
 class ImageObject {
     constructor(url, description, headline, text) { // Konstruktor für ein Bild-Objekt
-         this.url = url; // URL des Bildes
-         this.description = description; // Beschreibung des Bildes
-         this.headline = headline; // Überschrift des Bildes
-         this.text = text; // Text des Bildes
+        this.url = url; // URL des Bildes
+        this.description = description; // Beschreibung des Bildes
+        this.headline = headline; // Überschrift des Bildes
+        this.text = text; // Text des Bildes
     }
 
     // Methode zum Generieren des HTML-Codes für das Bild

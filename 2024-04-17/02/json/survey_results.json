@@ -1,2 +1,8 @@
-[{"name":"asdf","languages":["python"]},
-{"name":"asdf","languages":["python"]},{"name":"asdf","languages":["csharp"]}]
+[
+    {
+        "name": "asdfasdf",
+        "languages": [
+            "python"
+        ]
+    }
+]
